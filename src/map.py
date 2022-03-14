@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-# import datetime
 from datetime import datetime
 import folium
 from folium.plugins import HeatMap
@@ -25,10 +24,6 @@ def write(data):
 	min_selection, max_selection = st.sidebar.slider(
 		"Select date range", min_value=min_date, max_value=max_date, value=[min_date, max_date]
 	)
-
-	# show_heatmap = st.sidebar.checkbox("Show Heatmap")
-	# show_detailed_months = st.sidebar.checkbox("Show Detailed Split per Year")
-	# show_mode = st.sidebar.checkbox("Show Mode Breakdown")
 
 	df = df[
 		(df["date"] >= min_selection) & (df["date"] <= max_selection)
@@ -58,8 +53,9 @@ def write(data):
 	m = m.loc[m['temp_bins'].astype(str) == temp_choice]
 	
 	# if show_heatmap:
-	map_heatmap_start = folium.Map(location=(39.9042, 116.4074))
-	map_heatmap_end = folium.Map(location=(39.9042, 116.4074))
+	x = 400
+	map_heatmap_start = folium.Map(location=(39.9042, 116.4074), height=x, width="55%")
+	map_heatmap_end = folium.Map(location=(39.9042, 116.4074), height=x, width="55%")
 	
 	# Filter the DF for columns, then remove NaNs
 	heat_df_start = m[["lat", "lon"]]
@@ -79,8 +75,10 @@ def write(data):
 	HeatMap(heat_data_e).add_to(map_heatmap_end)
 	# Display the map using the community component
 	
-	st.write(f"+ Filtering between {min_selection.date()} & {max_selection.date()}")
-	st.write(f"Data Points: {len(m)}")
+	s = f"+ Filtering between {min_selection.date()} and {max_selection.date()}"
+	s += f" ({len(df)} data points)"
+	st.write(s)
+	
 	
 	col1, col2 = st.columns(2)
 	with col1:
@@ -88,21 +86,8 @@ def write(data):
 		folium_static(map_heatmap_start)
 	with col2:
 		st.subheader("Trip end locations")
-		# st.write(f"Filtering between {min_selection.date()} & {max_selection.date()}")
-		# st.write(f"Data Points: {len(m)}")
 		folium_static(map_heatmap_end)
-	
-	# if show_detailed_months:
-		# month_year = (
-			# df.groupby([df["date"].dt.year, df["date"].dt.month])
-			# .count()
-			# .plot(kind="bar")
-		# )
-		# month_year.set_xlabel("Month, Year of Data Points")
-		# hist_month_year = month_year.get_figure()
-		# st.subheader("Data Split by Month, Year")
-		# st.pyplot(hist_month_year)
-	
+		
 	# if show_mode:
 	ms_coords = pd.DataFrame(data=m, columns=("lat", "lon"))
 	me_coords = pd.DataFrame(data=m, columns=("latitudeEnd", "longitudeEnd"))

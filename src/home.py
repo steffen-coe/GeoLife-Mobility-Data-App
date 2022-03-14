@@ -12,33 +12,3 @@ def write(data):
 	
 	#TODO: include some basic model outcomes (incl. odds ratios)
 	
-	
-	"""
-	df = pd.read_csv("full_geolife+weather.csv")
-
-	date_columns = ["date", "Converted_TimeStart", "Converted_TimeEnd", "sunrise", "sunset"]
-	for col in date_columns:
-		df[col] = pd.to_datetime(df[col])
-
-	df
-
-	st.text_input("Your name", key="name")
-
-	# You can access the value at any point with:
-	name = st.session_state.name
-
-	st.text("hello, %s"%name)
-
-	x = st.slider("variable")
-	st.write(x, "sqrt", x**0.5)
-
-
-	st.dataframe(df.describe())
-
-	st.text("hello, steffen")
-
-	st.line_chart(df["temp"])
-
-	st.dataframe(df)
-	"""
-

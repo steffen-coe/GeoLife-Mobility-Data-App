@@ -12,9 +12,8 @@ import src.explore
 
 st.set_page_config(
 		page_title="GeoLife Mobility and Weather Data for Beijing, China",
-		# page_icon="🌍",
 		page_icon="🌏",
-		# layout="wide",
+		layout="wide",
 		initial_sidebar_state="expanded",
 	)
 
@@ -55,11 +54,6 @@ def get_data():
 	date_columns = ["date", "Converted_TimeStart", "Converted_TimeEnd", "sunrise", "sunset"]
 	for col in date_columns:
 		df[col] = pd.to_datetime(df[col])
-	# if var == "Length of day (sunrise/sunset)":
-		# st.write(df["sunrise"].dtype)
-	
-	# st.write("here")
-	# st.write(df["sunrise"])
 	df["sunrise"] = df["sunrise"].dt.time
 	df["sunset"] = df["sunset"].dt.time
 	
