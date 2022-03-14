@@ -41,12 +41,11 @@ def main():
 	page = PAGES[selection]
 
 	with st.spinner(f"Loading {selection} ..."):
-		# ast.shared.components.write_page(page)
 		page.write(data)
 
 	st.sidebar.info("**Contributors:** Steffen Coenen, Dhruvil Patel, Vaibhavi Lakshmi Segu, Ekin Uğurel")
 	
-	st.sidebar.info("**Full material:** The full dataset and all code is available at the corresponding [GitHub repository](https://plotly.com/python-api-reference/index.html).") # TODO: fix link
+	st.sidebar.info("**Full material:** The full dataset and all code is available at the corresponding [GitHub repository](https://github.com/steffen-coe/GeoLife-Mobility-Data-App).")
 
 @st.cache(allow_output_mutation=True)
 def get_data():

@@ -1,4 +1,4 @@
-# GeoLife Mobility Data App
+# GeoLife Mobility Data App 🌆🗺️
 
 ## About
 
@@ -8,7 +8,7 @@ It is available at [...](...) and can be downloaded or cloned from there freely.
 
 ## Usage
 
-The application can be found under TODO.
+The application can be found under [https://github.com/steffen-coe/GeoLife-Mobility-Data-App].
 
 The application was written in the Python programming language and used on the Python version 3.8 (downward capability given at least to Python 3.5), using the [Streamlit interface](https://streamlit.io/) to produce an interactive user interface with tables and visuals.
 
