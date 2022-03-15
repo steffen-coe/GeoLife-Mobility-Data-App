@@ -16,7 +16,14 @@ def write(data):
 	st.write("This table shows the raw descriptive statistics (count, mean, standard deviation, minimum, maximum, and quartiles) of all columns in the used dataset.")
 	st.write("+ Scroll to the right to see all variables.\n + Click on the column names to sort its values.")
 	
-	st.write(df.describe())
+	# round descriptive statistics
+	variables = df_key.index[df_key["n_digits"] >= 0].tolist()
+	stats = df[variables].describe()
+	for var in variables:
+		n = int(df_key.loc[var, "n_digits"])
+		stats[var] = stats[var].round(n)
+	stats = stats.astype(str)
+	st.write(stats)
 	
 	########
 	st.write("### Number of observations over time")
