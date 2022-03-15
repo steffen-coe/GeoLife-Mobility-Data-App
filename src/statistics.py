@@ -17,7 +17,6 @@ def write(data):
 	st.write("+ Scroll to the right to see all variables.\n + Click on the column names to sort its values.")
 	
 	# round descriptive statistics
-	st.write(df_key.columns)
 	variables = df_key.index[df_key["n_digits"] >= 0].tolist()
 	stats = df[variables].describe()
 	for var in variables:
