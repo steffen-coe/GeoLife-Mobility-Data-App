@@ -10,7 +10,7 @@ The Python implementation is available at <https://github.com/steffen-coe/GeoLif
 
 ## Usage
 
-The application can be found under [...]. #TODO
+The application can be found under <https://share.streamlit.io/steffen-coe/geolife-mobility-data-app/main/app.py>.
 
 The application was written in the Python programming language and used on the Python version 3.8 (downward capability given at least to Python 3.5), using the [Streamlit interface](https://streamlit.io/) to produce an interactive user interface with tables and visuals.
 
