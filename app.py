@@ -46,7 +46,7 @@ def main():
 	
 	st.sidebar.info("**Full material:** The full dataset and all code is available at the corresponding [GitHub repository](https://github.com/steffen-coe/GeoLife-Mobility-Data-App).")
 
-@st.cache(allow_output_mutation=True)
+# @st.cache(allow_output_mutation=True)
 def get_data():
 	# df = pd.read_csv("data/full_geolife+weather.csv")
 	df = pd.read_csv("data/full_geolife+weather_dates_fmted.csv")
