@@ -58,7 +58,6 @@ def get_data():
 	df["sunset"] = df["sunset"].dt.time
 	
 	df_key = pd.read_csv("data/full_geolife+weather_key.csv", index_col="column")
-	st.write(df_key.columns)
 	
 	return df, df_key
 
