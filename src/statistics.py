@@ -22,6 +22,7 @@ def write(data):
 	for var in variables:
 		n = int(df_key.loc[var, "n_digits"])
 		stats[var] = stats[var].round(n)
+	st.write(df_key.columns)
 	stats = stats.astype(str)
 	st.write(stats)
 	
