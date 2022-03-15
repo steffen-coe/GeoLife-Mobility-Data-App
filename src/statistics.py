@@ -19,10 +19,10 @@ def write(data):
 	# round descriptive statistics
 	variables = df_key.index[df_key["n_digits"] >= 0].tolist()
 	stats = df[variables].describe()
+	st.write(df_key.columns)
 	for var in variables:
 		n = int(df_key.loc[var, "n_digits"])
 		stats[var] = stats[var].round(n)
-	st.write(df_key.columns)
 	stats = stats.astype(str)
 	st.write(stats)
 	
