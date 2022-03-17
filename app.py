@@ -7,7 +7,7 @@ import src.statistics
 import src.map
 import src.weather
 import src.explore
-# import src.model
+# import src.model #model results can be included here in the future
 
 
 st.set_page_config(
@@ -65,18 +65,4 @@ if __name__ == "__main__":
 	main()
 
 
-
-# Add a selectbox to the sidebar:
-# add_selectbox = st.sidebar.selectbox(
-	# 'How would you like to be contacted?',
-	# ('Email', 'Home phone', 'Mobile phone')
-# )
-
-# Add a slider to the sidebar:
-# add_slider = st.sidebar.slider(
-	# 'Select a range of values',
-	# 0.0, 100.0, (25.0, 75.0)
-# )
-
-#####
 

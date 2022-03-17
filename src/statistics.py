@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-# from plotly.subplots import make_subplots
 import matplotlib.pyplot as plt
 
 def write(data):
@@ -41,40 +40,6 @@ def write(data):
 	
 	st.plotly_chart(fig, sharing="streamlit")
 	
-	########
-	st.write("### Key trip characteristics by mode choice")
-	st.write("Explore the figure below to see how key trip characteristics like average speed or trip duration differ by the chosen mode.")
-	
-	variables = ["distanceTotal", "time_total", "vel_avg", "vel_max", "vcr", "sr", "hcr"]
-	options = [df_key.loc[var, "full_name"] for var in variables]
-	
-	s = "**Possible variables to choose from:**\n"
-	for i in variables:
-		s += "+ *" + df_key.loc[i, "full_name"] + "*: " + df_key.at[i, "description"] + "\n"
-	st.write(s)
-	
-	option = st.selectbox("Select trip variable:", options)
-	
-	var = df_key.index[df_key["full_name"] == option].to_list()[0]
-	
-	#ylabel
-	ylabel = option
-	unit   = df_key.at[var, "unit"]
-	if type(unit) == str:
-		ylabel += " (%s)"%unit
-	
-	#boxplots by mode (matplotlib)
-	# fig, ax = plt.subplots()
-	# df.boxplot(column=var, by="label", ax=ax)
-	# ax.set_xlabel("Mode choice")
-	# ax.set_ylabel(ylabel)
-	# st.pyplot(fig)
-	
-	#boxplots by mode (plotly)
-	fig = px.box(df, x="label", y=var)
-	fig.update_layout(xaxis_title_text="Mode choice", yaxis_title_text=ylabel)
-	st.plotly_chart(fig, sharing="streamlit")
-	
 	
 	########
 	st.write("### Explore the data with different charts")
@@ -98,7 +63,7 @@ def write(data):
 
 	if chart == 'Scatterplot':
 		# As you must know, the scatter is good to correlations
-		# that's why we have to fields to select columns
+		# that's why we have two fields to select columns
 		x = st.selectbox("Select a variable for the horizontal (x) axis:", df.columns)
 		y = st.selectbox("Select a variable for the vertical (y) axis:", df.columns)
 		

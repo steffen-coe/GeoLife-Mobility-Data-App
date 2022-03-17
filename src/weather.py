@@ -21,9 +21,8 @@ def write(data):
 
 def plot_weather_variable(data, var):
 	df, df_key = data
-	# create interactive timeseries for weather data
-	# with st.expander("Temperature"):
 	
+	# create interactive timeseries for weather data
 	yss = {
 			"Temperature" : ["temp", "tempmin", "tempmax", "dew"], 
 			"Precipitation" : ["precip"], 
@@ -79,19 +78,4 @@ def plot_weather_variable(data, var):
 
 	fig = dict(data=l, layout=layout)
 	
-	# fig.update_layout(
-		# title="Plot Title",
-		# xaxis_title="X Axis Title",
-		# yaxis_title="Y Axis Title",
-		# legend_title="Legend Title",
-		# font=dict(
-			# family="Courier New, monospace",
-			# size=18,
-			# color="RebeccaPurple"
-		# )
-	# )
-	
-	# pyoff.iplot(fig, filename = "Temperature variation")
-	# pyoff.plot(fig, filename="Plotly_temperature.html")
-
 	st.plotly_chart(fig, use_container_width=True, sharing="streamlit")
