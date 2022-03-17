@@ -6,7 +6,7 @@ A Python-based application utilizing Streamlit to provide structured, interactiv
 
 The Python implementation is available at <https://github.com/steffen-coe/GeoLife-Mobility-Data-App> and can be downloaded or cloned from there freely. It is available under an [MIT License](LICENSE).
 
-This application is the result of a group project in the class CET 522 (Transportation Data Management and Visualization). Contributing authors are listed below under **Contact**. Along with this application, the group submitted a report, which can be found here: [Final Report](Final Project Report.pdf)
+This application is the result of a group project in the class CET 522 (Transportation Data Management and Visualization). Contributing authors are listed below under **Contact**. Along with this application, the group submitted a report, which can be found here: [Final Report](https://github.com/steffen-coe/GeoLife-Mobility-Data-App/blob/main/Final%20Project%20Report.pdf)
 
 ![Screenshot of a visualization in the app.](img/screenshot_01.png)
 
