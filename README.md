@@ -32,7 +32,7 @@ Please see the [requirements](requirements.txt) for Python requirements and depe
 
 The authors are happy to be contacted via email for any questions or help regarding the use of this app.
 
-+ Steffen Coenen (scoenen [at] uw.com)
++ Steffen Coenen (scoenen [at] uw.edu)
 + Ekin Uğurel (ugurel [at] uw.edu)
 + Dhruvil Patel (dpatel28 [at] uw.edu)
 + Vaibhavi Lakshmi Segu (vlsegu [at] uw.edu)
